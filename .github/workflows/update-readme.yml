@@ -1,0 +1,20 @@
+name: Update README Activity
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  schedule:
+    - cron: '0 */6 * * *' # Se ejecuta cada 6 horas para no saturar
+  workflow_dispatch: # Permite ejecución manual para pruebas
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          comment_tag_name: "RECENT_ACTIVITY_LIST"
+          feed_list: "https://github.com/thetrueseros.atom"
+          max_post_count: 8
+          template: ">> [LOG_$index]: $title"

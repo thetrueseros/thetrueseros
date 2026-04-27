@@ -1,79 +1,63 @@
-<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="280" viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&amp;display=swap');
       
-      .gothic-text { 
-        font-family: 'UnifrakturMaguntia', serif; 
-        text-anchor: middle;
-        dominant-baseline: middle;
-      }
+      .gothic { font-family: 'UnifrakturMaguntia', serif; fill: #1758AC; text-anchor: middle; dominant-baseline: middle; }
       
-      /* Título Principal */
-      .title { 
-        fill: #1758AC; 
-        font-size: 70px; 
-      }
-      
-      /* Sombra Definida (No difuminada) */
-      .shadow-defined {
-        fill: #001A33; /* Un azul mucho más oscuro para la sombra sólida */
-        font-size: 70px;
+      /* Animación de latido del sistema */
+      @keyframes pulse {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 0.8; stroke-width: 2; }
       }
 
-      /* Subtítulo */
-      .subtitle { 
-        fill: #1758AC; 
-        font-size: 30px; 
-        opacity: 0.7;
+      /* Movimiento de neblina (Paralaje) */
+      @keyframes drift {
+        from { transform: translateX(-400px); }
+        to { transform: translateX(400px); }
       }
+
+      .pulse-line { animation: pulse 3s infinite ease-in-out; }
+      .drift-layer { animation: drift 20s infinite linear; }
     </style>
-  </defs>
-  
-  <rect width="100%" height="100%" fill="transparent" />
 
-  <g transform="translate(400, 90)">
+    <radialGradient id="vignette" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1758AC" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#000" stop-opacity="1" />
+    </radialGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#000" />
+  
+  <g class="drift-layer" opacity="0.1">
+    <text x="0" y="140" fill="#1758AC" font-family="monospace" font-size="10">0 1 0 1 1 0 0 1 0 1 1 1 0 1 0 1 0 1 1 0 0 1 0 1 1 1 0 1</text>
+    <text x="800" y="140" fill="#1758AC" font-family="monospace" font-size="10">0 1 0 1 1 0 0 1 0 1 1 1 0 1 0 1 0 1 1 0 0 1 0 1 1 1 0 1</text>
+  </g>
+
+  <g fill="none" stroke="#1758AC" stroke-width="1.5">
+    <path d="M50,40 L750,40 L780,70 L780,210 L750,240 L50,240 L20,210 L20,70 Z" class="pulse-line" stroke-opacity="0.5" />
     
-    <text class="gothic-text shadow-defined" x="4" y="4">
+    <circle cx="20" cy="70" r="3" fill="#1758AC" />
+    <circle cx="780" cy="70" r="3" fill="#1758AC" />
+    <circle cx="20" cy="210" r="3" fill="#1758AC" />
+    <circle cx="780" cy="210" r="3" fill="#1758AC" />
+    
+    <path d="M100,240 Q400,100 700,240" stroke-opacity="0.2" />
+    <path d="M100,40 Q400,180 700,40" stroke-opacity="0.2" />
+  </g>
+
+  <g transform="translate(400, 140)">
+    <rect x="-250" y="-40" width="500" height="80" fill="url(#vignette)" />
+    
+    <text x="4" y="4" class="gothic" style="font-size: 70px; fill: #001A33; opacity: 0.8;">Software Engineer</text>
+    
+    <text x="0" y="0" class="gothic" style="font-size: 70px;">
       Software Engineer
-      <animate 
-        attributeName="x" 
-        values="4; -4; 4" 
-        dur="6s" 
-        repeatCount="indefinite" />
-      <animate 
-        attributeName="y" 
-        values="4; -2; 4" 
-        dur="6s" 
-        repeatCount="indefinite" />
-    </text>
-    
-    <text class="gothic-text title" x="0" y="0">Software Engineer</text>
-    
-    <text class="gothic-text title" x="0" y="0" fill="#FF0000" opacity="0">
-      Software Engineer
-      <animate 
-        attributeName="opacity" 
-        values="0; 0; 0.6; 0; 0; 0.8; 0" 
-        dur="10s" 
-        repeatCount="indefinite" />
-      <animateTransform 
-        attributeName="transform" 
-        type="translate" 
-        values="0,0; 2,1; -2,-1; 0,0" 
-        dur="10s" 
-        repeatCount="indefinite" />
+      <animate attributeName="fill" values="#1758AC;#ffffff;#1758AC;#ff0000;#1758AC" dur="8s" repeatCount="indefinite" />
     </text>
   </g>
 
-  <text x="50%" y="150" class="gothic-text subtitle">Digital Alchemist &amp; Backend Dev</text>
-  
-  <path d="M 100 170 H 700" stroke="#1758AC" stroke-width="1" fill="none" stroke-dasharray="600">
-    <animate 
-      attributeName="stroke-dashoffset" 
-      from="600" 
-      to="0" 
-      dur="3s" 
-      repeatCount="indefinite" />
-  </path>
+  <text x="50%" y="200" text-anchor="middle" fill="#ffffff" style="font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 10px; opacity: 0.4;">
+    ARCHITECTURE // BACKEND // MEDELLÍN
+  </text>
 </svg>

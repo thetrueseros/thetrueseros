@@ -1,0 +1,71 @@
+<svg width="800" height="280" viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="distorsion_stack">
+      <feTurbulence type="fractalNoise" numOctaves="5" baseFrequency="0.02" result="noise">
+        <animate attributeName="baseFrequency" values="0.01;0.03;0.01" dur="10s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+    </filter>
+
+    <style>
+      .label-tech { font-family: monospace; fill: #1758AC; font-size: 10px; letter-spacing: 3px; opacity: 0.6; }
+      .tech-id { font-family: 'Courier New', monospace; fill: #ffffff; font-size: 16px; font-weight: bold; }
+      .sigil-line { stroke: #1758AC; stroke-width: 1.2; fill: none; opacity: 0.5; }
+      .bracket { stroke: #1758AC; stroke-width: 2; fill: none; opacity: 0.8; }
+      
+      @keyframes scanline {
+        0% { transform: translateY(0); opacity: 0; }
+        50% { opacity: 0.2; }
+        100% { transform: translateY(280px); opacity: 0; }
+      }
+      .scan { stroke: #1758AC; stroke-width: 0.5; opacity: 0.1; animation: scanline 4s linear infinite; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#000" />
+  <line x1="0" y1="0" x2="800" y2="0" class="scan" />
+
+  <g transform="translate(40, 40)" filter="url(#distorsion_stack)">
+    <text x="0" y="0" class="label-tech">[ MODULE: LOGIC_RUNTIME ]</text>
+    <path d="M0,10 H300 M0,10 V100" class="sigil-line" />
+    
+    <g transform="translate(20, 40)">
+      <path d="M0,0 L10,-10 H100 L110,0 V30 L100,40 H10 L0,30 Z" class="sigil-line" opacity="0.3" />
+      <text x="15" y="25" class="tech-id">C# // .NET</text>
+    </g>
+
+    <g transform="translate(150, 40)">
+      <path d="M0,0 L5,-5 H80 L85,0 V30 L80,35 H5 L0,30 Z" class="sigil-line" opacity="0.3" />
+      <text x="15" y="25" class="tech-id">JAVA 26</text>
+    </g>
+
+    <g transform="translate(260, 40)">
+      <path d="M0,0 L5,-5 H80 L85,0 V30 L80,35 H5 L0,30 Z" class="sigil-line" opacity="0.3" />
+      <text x="15" y="25" class="tech-id">CPP_STD</text>
+    </g>
+  </g>
+
+  <g transform="translate(40, 160)" filter="url(#distorsion_stack)">
+    <text x="0" y="0" class="label-tech">[ MODULE: DATA_PERSISTENCE ]</text>
+    <path d="M0,10 H350 M0,10 V100" class="sigil-line" />
+
+    <g transform="translate(20, 40)">
+      <path d="M0,5 V25 M5,0 H180 M185,5 V25" class="bracket" />
+      <text x="15" y="22" class="tech-id">MSSQL // ORACLE_XE</text>
+    </g>
+
+    <g transform="translate(220, 40)">
+      <path d="M0,5 V25 M5,0 H180 M185,5 V25" class="bracket" />
+      <text x="15" y="22" class="tech-id">MONGO // FIREBASE</text>
+    </g>
+  </g>
+
+  <g opacity="0.1" font-family="monospace" font-size="8" fill="#1758AC">
+    <text x="600" y="50">0xDEADBEEF</text>
+    <text x="600" y="70">STACK_OVERFLOW_INIT</text>
+    <text x="600" y="90">KERNEL_MODE_ACTIVE</text>
+    <path d="M580,40 V100 M580,70 H750" stroke="#1758AC" stroke-width="0.5" />
+  </g>
+
+  <text x="780" y="260" text-anchor="end" class="label-tech" opacity="0.4">COMPILER_STATUS: READY // 2026</text>
+</svg>

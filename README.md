@@ -1,28 +1,21 @@
-# It's seros.
-
 <div align="center">
 
-<img src="cyber-gothic-banner.svg" width="800" alt="Software Engineer - Digital Gothic Banner" />
+<img src="banner.svg" width="800" alt="Software Engineer - Digital Gothic Banner" />
 
-<br/>
+</div>
+<div align="center">
 
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/fire.png" width="90%" />
+<img src="stack.svg" width="800" alt="Software Engineer - Digital Gothic Banner" />
 
 </div>
 
-### About Me
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=thetrueseros&theme=transparent&stroke=1758AC&ring=1758AC&fire=FF0000&currStreakNum=ffffff&sideLabels=1758AC&dates=ffffff)](https://git.io/streak-stats)
 
-- Actualmente trabajando en **Via360** (Gestión de tráfico en Medellín).
-- Estudiante de 5to semestre en el **Pascual Bravo**.
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=thetrueseros&layout=compact&theme=transparent&title_color=1758AC&text_color=ffffff&hide_border=true&langs_count=6)
 
-### Tech Stack
-
-<p align="center">
-  <img src="https://img.shields.io/badge/CSharp-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
-  <img src="https://img.shields.io/badge/dotnet-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
-  <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" /> </p>
-
-### Github Stats
-### Recent Activities
+```text
+[RECV_DATA] >_ Initializing activity tracker...
+>> [LOG_0x01]: Optimized Via360 Firebase listeners
+>> [LOG_0x02]: Refactored SQL_Server connection strings
+>> [LOG_0x03]: Pushed local changes to master --force
+[SYS_STATUS]: STABLE // LISTENING_FOR_COMMITS

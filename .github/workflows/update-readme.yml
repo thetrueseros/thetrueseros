@@ -17,4 +17,4 @@ jobs:
           comment_tag_name: "RECENT_ACTIVITY_LIST"
           feed_list: "https://github.com/thetrueseros.atom"
           max_post_count: 8
-          template: ">> [LOG_$index]: $title"
+          template: ">> [SYSTEM_LOG]: $title <br />"
